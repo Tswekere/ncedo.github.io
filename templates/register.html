@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Ncedo</title>
+    <link rel="stylesheet" href="static/style/register.css">
+
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="header">
+                <h1 class="ncedo-title">NCEDO</h1>
+                <h3>IT'S ALWAYS BETTER LOCAL</h3>
+            </div>
+            <div class="card">
+                <form action="{{ url_for('register') }}" method="POST">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="address" placeholder="56 Commissioner" required>
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="text" name="phone" placeholder="+1 23 45 12" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="{{ url_for('home') }}" class="register-link">Login here</a></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

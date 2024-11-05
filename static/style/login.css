@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    background-image: url('../images/background.jpg'); /* Updated path if necessary */
+    background-size: cover;
+    background-position: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+    border: 2px solid rgba(74, 144, 226, 0.5);
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fadeIn 0.5s forwards; /* Animation effect */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+        transform: translateY(20px); /* Move card up */
+    }
+    to {
+        opacity: 1; /* End with full opacity */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+.ncedo-title {
+    font-family: 'Instagram', cursive; /* Ensure you have the correct font loaded */
+    font-size: 48px; /* Increased font size for emphasis */
+    color: #4A90E2; /* Blue color for better visibility */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%; /* Adjusted for better centering */
+    border: 1px solid #ccc;
+    border-radius: 20px; /* More rounded */
+    text-align: center; /* Centered placeholders */
+    font-size: 16px; /* Standard input text size */
+}
+
+button {
+    background-color: #A0522D;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px; /* Rounded borders for buttons */
+    cursor: pointer;
+    width: 100%;
+    margin: 10px auto;
+    font-size: 16px; /* Standard button text size */
+}
+
+button:hover {
+    background-color: #8B4513;
+}
+
+.register-link {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* Slightly smaller for the link */
+}

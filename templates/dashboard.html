@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="static/style/dashboard.css">
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <div class="search-bar">
+        <form action="{{ url_for('dashboard') }}" method="POST">
+            <label for="service_type">Enter Service Type:</label>
+            <input type="text" id="service_type" name="service_type" required placeholder="e.g., Bakery, Nanny">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <h2>Results:</h2>
+    <div class="results-container">
+        {% for company in companies %}
+            <div class="card">
+                <h3>{{ company["Company Name"] }}</h3>
+                <p>Service: {{ company["Service Type"] }}</p>
+                <p>Address: {{ company["Address"] }}</p>
+                <!-- Optional information: contact details and website -->
+                <p>Phone: {{ company["Phone Number"] }}</p>
+                <p><a href="http://{{ company["Website"] }}" target="_blank">Website</a></p>
+                <p>Working Hours: {{ company["Working Hours"] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
